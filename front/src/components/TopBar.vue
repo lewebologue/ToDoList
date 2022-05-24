@@ -9,8 +9,7 @@
         </label>
         <ul class="menu">
             <li><router-link to="/home">Home</router-link></li>
-            <li><router-link to="/new-list">New list</router-link></li>
-            <li><a href="">Disconnect</a></li>
+            <li><a href="" @click="logout()">Disconnect</a></li>
         </ul>
     </section>
 </template>
@@ -18,5 +17,12 @@
 <script>
 export default {
     name: "TopBar",
+    methods: {
+        logout() {
+            sessionStorage.removeItem('token');
+            sessionStorage.removeItem('userId');
+            this.$router.push('/');
+        },
+    },
 }
 </script>
