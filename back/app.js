@@ -3,6 +3,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const listRte = require('./routes/listRoutes');
+const userRte = require('./routes/userRoutes');
 
 //Connection à la base de données
 
@@ -31,5 +32,6 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.use('/api/', listRte);
+app.use('/api/', userRte);
 
 module.exports = app;
