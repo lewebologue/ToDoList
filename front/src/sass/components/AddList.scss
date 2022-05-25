@@ -1,0 +1,41 @@
+.add--main__container{
+    height: 100vh;
+    font-family: raleway;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .add--form__container{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        .add__title{
+            font-weight: 600;
+            font-size: 3.5em;
+        }
+        .container__add__form{
+            height: 40vh;
+            width: 70vw;
+            border-radius: 1rem;
+            box-shadow: $shadow;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 2rem 0 2rem 0;
+        }
+        .container__add__button{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            button{
+                width: 80%;
+                height: 2.5rem;
+                color: $secondary-color;
+                background-color: $background;
+                font-size: 1.7em;
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+.list--main-container{
+    height: 100vh;
+    padding: 0 0.5rem;
+    .add-list-content{
+        margin: 1rem 0;
+        .commands{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            .add-list-button{
+                margin-right: 1rem;
+            }
+        }
+    }
+    .all-list-container{
+        margin: 1rem 0;
+        .list-bloc{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1rem;
+            .list-name{
+                width: 70%;
+                overflow: hidden;
+                a{
+                    text-decoration: none;
+                }
+            }
+            .list-button{
+                width: 30%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+    .completed-lists{
+        @extend .all-list-container;
+        .list-name{
+            text-decoration: line-through;
+        }
+    }
+}

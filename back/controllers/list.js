@@ -29,7 +29,8 @@ exports.createList = (req, res, next) => {
 exports.editList = (req, res, next) => {
     const listId = req.params.id;
     const listObject = req.body;
-    List.updateOne({ _id: listId }, { ...listObject, _id: listId })
+    delete listObject._id;
+    List.updateOne({ _id: listId }, { $set: listObject })
         .then(() => res.status(200).json({ message: 'List updated !' }))
         .catch(error => res.status(400).json({ error }));
 };
@@ -37,6 +38,7 @@ exports.editList = (req, res, next) => {
 //Delete list
 exports.deleteList = (req, res, next) => {
     const listId = req.params.id;
+    delete listId._id;
     List.deleteOne({ _id: listId })
         .then(() => res.status(200).json({ message: 'List deleted !' }))
         .catch(error => res.status(400).json({ error }));
