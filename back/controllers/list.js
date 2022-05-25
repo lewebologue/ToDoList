@@ -46,7 +46,7 @@ exports.deleteList = (req, res, next) => {
 
 //Get all lists
 exports.getLists = (req, res, next) => {
-    List.find()
+    List.find({}).sort({createdAt:-1})
         .then(lists => res.status(200).json(lists))
         .catch(error => res.status(400).json({ error }));
 };
