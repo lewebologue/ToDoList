@@ -8,8 +8,8 @@
                 <h2>SIGNUP</h2>
             </div>
             <div class="container__login__form">
-                <input type="text" required placeholder="email" v-model="email">
-                <input type="password" required placeholder="password" v-model="password">
+                <input type="email" required placeholder="email" v-model="email">
+                <input type="password" required placeholder="password" v-model="password"  pattern=".{8,}" title="Eight or more characters">
             </div>
             <div class="container__login_account">
                 <p>Already have an account?</p>
@@ -41,20 +41,31 @@ export default {
                 "email": this.email,
                 "password": this.password
             }
-            const url = "http://localhost:3000/api/signup";
-            const options = {
-                method: "POST",
-                body: JSON.stringify(credentials),
-                headers: {
-                    'Content-type' : 'application/json'
+            //check if email is correct using regex
+            const mailRegexp = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/;
+            if (mailRegexp.test(this.email)) {
+                const url = "http://localhost:3000/api/signup";
+                const options = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(credentials)
                 }
-            };
-            fetch(url, options)
-            .then(res => res.json())
-			.then (() =>{
-				alert("Welcome aboard ! Please sign in");
-				window.location.reload();
-            })
+                fetch(url, options)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        sessionStorage.setItem('token', data.token);
+                        sessionStorage.setItem('userId', data.userId);
+                        this.$router.push('/home');
+                    }
+                })
+            } else {
+                alert("Email is not valid");
+            }
         },
     },
 }
