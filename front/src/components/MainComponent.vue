@@ -13,7 +13,7 @@
             <div v-for="list in lists" :key="list.id">
                 <div class="list-bloc" v-if="list.isDone==false">
                     <div class="list-name">
-                        <a href="">{{list.name}}</a>
+                        <a @click="detailedView(list._id)">{{list.name}}</a>
                     </div>
                     <div class="list-button">
                         <button @click.prevent="isDone(list._id)">done</button>
@@ -132,7 +132,10 @@ export default {
                     window.location.reload();
                 })
                 .catch(error => console.error(error));
-        }
+        },
+        detailedView(id){
+            this.$router.push('/' + id);
+        },
     },
 
 }

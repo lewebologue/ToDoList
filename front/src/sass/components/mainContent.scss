@@ -25,6 +25,9 @@
                 overflow: hidden;
                 a{
                     text-decoration: none;
+                    font-family: raleway;
+                    font-weight: 600;
+
                 }
             }
             .list-button{
@@ -39,6 +42,8 @@
         @extend .all-list-container;
         .list-name{
             text-decoration: line-through;
+            font-family: raleway;
+            font-weight: 600;
         }
     }
 }
