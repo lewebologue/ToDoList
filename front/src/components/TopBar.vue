@@ -9,7 +9,7 @@
         </label>
         <ul class="menu">
             <li><router-link to="/home">Home</router-link></li>
-            <li><a href="" @click="logout()">Disconnect</a></li>
+            <li><a @click="logout()">Disconnect</a></li>
         </ul>
     </section>
 </template>
