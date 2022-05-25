@@ -1,0 +1,39 @@
+.detailed--container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+    .list-content{
+        margin-top: 1rem;
+        width: 50%;
+        box-shadow: $shadow;
+        h2{
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        p{
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-family: raleway;
+            text-align: center;
+        }
+    }
+    .edit-list{
+        height: 15rem;
+        box-shadow: $shadow;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .commands{
+            padding: 1rem;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            gap: 2rem;
+        }
+    }
+    
+}
