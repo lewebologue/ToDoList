@@ -5,7 +5,7 @@
             <div class="commands">
                 <input type="text" placeholder="todo*" required v-model="name">
                 <input type="text" placeholder="description" v-model="description">
-                <button @click="addNew()">add</button>
+                <button @click="addNew()" :disabled="!name">add</button>
             </div>
         </div>
         <div class="all-list-container">

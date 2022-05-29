@@ -31,9 +31,13 @@
             height: max-content;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: space-between;
             gap: 2rem;
         }
     }
-    
+    .commands-button{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
 }

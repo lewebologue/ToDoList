@@ -14,7 +14,7 @@
                     <button @click.prevent="editList()">add</button>
                 </div>
             </div>
-            <div class="commands">
+            <div class="commands-button">
                 <button @click="goBack()">go back</button>
                 <button @click="deleteList()">delete</button>
             </div>
@@ -60,7 +60,7 @@ export default {
     methods: {
         editList(){
             const data = {
-                name: this.edit.name,
+                name: this.edit.name || this.name,
                 description: this.edit.description || this.description
             }
             const url = "http://localhost:3000/api/" + this.$route.params.id;
