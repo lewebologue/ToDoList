@@ -80,6 +80,7 @@ export default {
                     this.lists.push(data);
                     this.name = "";
                     this.description = "";
+                    window.location.reload();
                 })
                 .catch(error => console.error(error));
         },
