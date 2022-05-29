@@ -19,6 +19,10 @@
                 <button @click="signup()">signup</button>
             </div>
         </div>
+        <!--Boostrap alert banner-->
+        <div class="alert alert-danger" v-if="error">
+            <p>{{error}}</p>
+        </div>
     </div>
 </template>
 
@@ -29,6 +33,7 @@ export default {
         return {
             email: "",
             password: "",
+            error:"",
         }
     },
     methods: {
@@ -56,7 +61,7 @@ export default {
                 .then(response => response.json())
                 .then(data => {
                     if (data.error) {
-                        alert(data.error);
+                        this.error = data.error;
                     } else {
                         sessionStorage.setItem('token', data.token);
                         sessionStorage.setItem('userId', data.userId);
@@ -67,6 +72,13 @@ export default {
                 alert("Email is not valid");
             }
         },
+        //error handling for bootstrap
+        showError(error){
+            this.error = error;
+            setTimeout(() => {
+                this.error = "";
+            }, 3000);
+        }
     },
 }
 </script>

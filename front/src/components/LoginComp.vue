@@ -19,6 +19,10 @@
                 <button @click="login()">connect</button>
             </div>
         </div>
+        <!--Boostrap alert banner-->
+        <div class="alert alert-danger" v-if="error">
+            <p>{{error}}</p>
+        </div>
     </div>
 </template>
 
@@ -29,6 +33,7 @@ export default {
         return {
             email: "",
             password: "",
+            error:"",
         }
     },
     methods: {
@@ -57,11 +62,18 @@ export default {
                     sessionStorage.setItem("token", res.token),
                     this.$router.push('/home')
                 }else{
-                    alert("Wrong credentials")
+                    this.showError(res.error)
                 }
             })
             .catch(err => console.log(err));
         },
+        //error handling for bootstrap
+        showError(error){
+            this.error = error;
+            setTimeout(() => {
+                this.error = "";
+            }, 3000);
+        }
     },
 }
 </script>
