@@ -1,6 +1,5 @@
 # Contexte
 Notre fantastique propriétaire de produit a une idée merveilleuse, étonnante et révolutionnaire... il veut construire une nouvelle application Todo. 
-Il a une bonne idée du comportement de l'application et vient avec un backlog contenant les user stories suivantes :
 
 ### Technologies utilisées
 - Vue.js 3 + Vue router + Vue CLI
