@@ -20,7 +20,7 @@
             </div>
         </div>
         <!--Boostrap alert banner-->
-        <div class="alert alert-danger" v-if="error">
+        <div class="alert alert-danger w-100 text-center" v-if="error">
             <p>{{error}}</p>
         </div>
     </div>

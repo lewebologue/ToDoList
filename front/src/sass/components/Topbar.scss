@@ -33,6 +33,9 @@ h2 {
 .menu>li {
     margin: 0 1rem;
     overflow: hidden;
+    &:hover{
+        cursor: pointer;
+    }
 }
 .menu-button-container {
     display: none;
